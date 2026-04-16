@@ -36,7 +36,7 @@ async function searchCountry() {
 
 async function addFavorite(country) {
 
-    await fetch("http://localhost:4000/favorites", {
+    await fetch("https://my-app-favorites.onrender.com/favorites", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -49,7 +49,7 @@ async function addFavorite(country) {
 
 async function loadFavorites() {
 
-    const response = await fetch("http://localhost:4000/favorites");
+    const response = await fetch("https://my-app-favorites.onrender.com/favorites");
     const data = await response.json();
     const list = document.getElementById("favorites");
     list.innerHTML = "";
@@ -66,7 +66,7 @@ async function loadFavorites() {
 
 async function deleteFavorite(id) {
 
-    await fetch(`http://localhost:4000/favorites/${id}`, {
+    await fetch(`https://my-app-favorites.onrender.com/favorites/${id}`, {
         method: "DELETE"
     });
 
