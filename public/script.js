@@ -77,7 +77,7 @@ async function deleteFavorite(id) {
 
 async function addWishlist(country) {
 
-    await fetch("http://localhost:1010/wishlist", {
+    await fetch("https://my-app-wishlist.onrender.com/wishlist", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -90,7 +90,7 @@ async function addWishlist(country) {
 
 async function loadWishlist() {
 
-    const response = await fetch("http://localhost:1010/wishlist");
+    const response = await fetch("https://my-app-wishlist.onrender.com/wishlist");
     const data = await response.json();
     const list = document.getElementById("wishlist");
     list.innerHTML = "";
@@ -107,7 +107,7 @@ async function loadWishlist() {
 
 async function deleteWishlist(id) {
 
-    await fetch(`http://localhost:1010/wishlist/${id}`, {
+    await fetch(`https://my-app-wishlist.onrender.com/${id}`, {
         method: "DELETE"
     });
 
