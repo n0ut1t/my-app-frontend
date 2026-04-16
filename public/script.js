@@ -126,7 +126,7 @@ async function addComment(country) {
         return;
     }
 
-    await fetch("http://localhost:5000/comments", {
+    await fetch("https://my-app-comments.onrender.com/comments", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -140,7 +140,7 @@ async function addComment(country) {
 
 async function loadComments() {
 
-    const response = await fetch("http://localhost:5000/comments");
+    const response = await fetch("https://my-app-comments.onrender.com/comments");
     const data = await response.json();
     const list = document.getElementById("comments");
     list.innerHTML = "";
@@ -157,7 +157,7 @@ async function loadComments() {
 
 async function deleteComment(id) {
 
-    await fetch(`http://localhost:5000/comments/${id}`, {
+    await fetch(`https://my-app-comments.onrender.com/comments/${id}`, {
         method: "DELETE"
     });
 
