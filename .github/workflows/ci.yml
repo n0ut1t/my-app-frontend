@@ -8,12 +8,22 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     steps:
+      # Obtener el código fuente del repositorio
       - uses: actions/checkout@v4
+      # Configurar la versión de Node.js
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: 'npm'
+      # Instalar las dependencias del proyecto
       - name: Install Dependencies
         run: npm install 
+      # Verificación de estilo de código con ESLint
+      - name: Anàlisi amb ESLint
+        run: npm run lint
+      # Construcción o build del proyecto
+      - name: Build del projecte
+        run: npm run build
+      # Ejecución de los tests unitarios
       - name: Run test
         run: npm test
