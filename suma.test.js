@@ -1,4 +1,4 @@
-const { expect, test } = require('vitest')
+import { expect, test } from 'vitest'
 
 test('la suma de 1 + 1 es 2', () => {
   let suma = 1 + 1
