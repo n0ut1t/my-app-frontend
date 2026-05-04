@@ -24,6 +24,12 @@ jobs:
       # Construcción o build del proyecto
       - name: Build del projecte
         run: npm run build
-      # Ejecución de los tests unitarios
+      # Execució de tests unitaris
       - name: Run test
         run: npm test
+      # Desplegament automàtic a Render (només si els tests passen i estem a main)
+      - name: Desplegament a Render
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "Tests passats amb èxit. Iniciant desplegament a Render..."
+          curl -X POST https://api.render.com/deploy/srv-d7gelsrbc2fs73dhr68g?key=qWk2Z2dn8GA
